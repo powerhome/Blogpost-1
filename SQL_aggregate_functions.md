@@ -9,9 +9,9 @@ SQL is a domain-specific language and is the standard language for relational da
 4. MAX
 5. MIN
 
-For illustration purposes, let's say we have a celebrity table that holds certain information, such as their name, notable movies, and net worth.
+For illustration purposes, let's say we have a celebrities table that holds certain information, such as their name, notable movies, and net worth.
 
-|       Name      | Age |    Notable Movie    |   Net Worth  |
+|       name      | age |    notable_movie    |   net_worth  |
 | --------------- | --- | ------------------- | ------------ |
 | Brad Pitt       |  55 | Fight Club          | $240,000,000 |
 | Christoph Waltz |  62 | Inglorious Bastards | $20,000,000  |
@@ -19,4 +19,9 @@ For illustration purposes, let's say we have a celebrity table that holds certai
 
 ### SUM
 
-**SUM()** does exactly what it says, it returns the sum of numbers. Unlike other SQL aggregate functions, the sum function accepts only the expression that evaluates to numerical values.
+**SUM()** does exactly what it says, it returns the sum of numbers. Unlike other SQL aggregate functions, the sum function accepts only the expression that evaluates to numerical values. If we want to get the sum of the actor's net worth combined and order it by name, we can write something like:
+
+```SELECT SUM(net_worth)
+FROM celebrites
+ORDER BY name;
+```
