@@ -67,7 +67,7 @@ The `MAX()` function returns the maximum value in a set while the `MIN()` functi
 SELECT MAX(age)
 FROM celebrities;
 ```
-This will return Al Pacino which is the senior on the list, 78 years young __Hooah!__
+This will return Al Pacino which is the senior on the list, 78 years young - _Hooah!_
 
 ```
 SELECT MIN(age)
