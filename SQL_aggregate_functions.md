@@ -21,7 +21,8 @@ For illustration purposes, let's say we have a celebrities table that holds cert
 
 **SUM()** does exactly what it says, it returns the sum of numbers. Unlike other SQL aggregate functions, the sum function accepts only the expression that evaluates to numerical values. If we want to get the sum of the actor's net worth combined and order it by name, we can write something like:
 
-```SELECT SUM(net_worth)
+```
+SELECT SUM(net_worth)
 FROM celebrites
 ORDER BY name;
 ```
