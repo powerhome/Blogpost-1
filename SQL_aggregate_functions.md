@@ -19,10 +19,26 @@ For illustration purposes, let's say we have a celebrities table that holds cert
 
 ### SUM
 
-**SUM()** does exactly what it says, it returns the sum of numbers. Unlike other SQL aggregate functions, the sum function accepts only the expression that evaluates to numerical values. If we want to get the sum of the actor's net worth combined and order it by name, we can write something like:
+`SUM()` does exactly what it says, it returns the sum of numbers. Unlike other SQL aggregate functions, the sum function accepts only the expression that evaluates to numerical values. If we want to get the sum of the actor's net worth combined and order it by name, we can write something like:
 
 ```
 SELECT SUM(net_worth)
-FROM celebrites
+FROM celebrities
 ORDER BY name;
 ```
+
+There are two modifiers for the sum function that can be helpful depending on the return we might be looking for:
+1. The `DISTINCT` modifier instructs the sum function to calculate the total of distinct values, which means that duplicates are eliminated.
+2. The `ALL` modifier allows the sum function to return the sum of all values including duplicates. It is used by default if no modifier is specified explicitly.
+
+### AVG
+
+The `AVG()` function returns an average of a group of numbers. We can use this function to return either the average net worth or the average age of the celebrities in our table. Let's look at the average $$$
+
+```
+SELECT AVG(net_worth)
+FROM celebrities
+ORDER BY name;
+```
+
+Just like the sum function, the average function has the `DISTINCT` and `ALL` modifiers available to it.
