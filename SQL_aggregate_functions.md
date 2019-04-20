@@ -6,8 +6,7 @@ SQL is a domain-specific language and is the standard language for relational da
 1. SUM
 2. AVG
 3. COUNT
-4. MAX
-5. MIN
+4. MAX and MIN
 
 For illustration purposes, let's say we have a celebrities table that holds certain information, such as their name, notable movies, and net worth.
 
@@ -19,7 +18,7 @@ For illustration purposes, let's say we have a celebrities table that holds cert
 
 ### SUM
 
-`SUM()` does exactly what it says, it returns the sum of numbers. Unlike other SQL aggregate functions, the sum function accepts only the expression that evaluates to numerical values. If we want to get the sum of the actor's net worth combined and order it by name, we can write something like:
+The `SUM()` function does exactly what it says, it returns the sum of numbers. Unlike other SQL aggregate functions, the sum function accepts only the expression that evaluates to numerical values. If we want to get the sum of the actor's net worth combined and order it by name, we can write something like:
 
 ```
 SELECT SUM(net_worth)
@@ -42,3 +41,36 @@ ORDER BY name;
 ```
 
 Just like the sum function, the average function has the `DISTINCT` and `ALL` modifiers available to it.
+
+### COUNT
+
+The `COUNT()` function returns the number of rows present in a table. In this table we have three entries, Brad, Christoph, and Al.
+
+```
+SELECT COUNT(*)
+FROM celebrities;
+```
+
+If we want to find the total count of celebrities with a net worth greater than a hundred million, we can set a conditional after the function:
+
+```
+SELECT COUNT(*)
+FROM celebrities
+WHERE net_worth > 1000000
+```
+
+### MAX and MIN
+
+The `MAX()` function returns the maximum value in a set while the `MIN()` function returns the minimum value in a set of values. This time, we want to see the oldest and youngest actors in our table.
+
+```
+SELECT MAX(age)
+FROM celebrities;
+```
+This will return Al Pacino which is the senior on the list, 78 years young __Hooah!__
+
+```
+SELECT MIN(age)
+FROM celebrities;
+```
+This will return Brad Pitt, who is 55 years old.
