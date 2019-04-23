@@ -25,14 +25,11 @@ SELECT SUM(net_worth)
 FROM celebrities
 ORDER BY name;
 ```
-
-There are two modifiers for the sum function that can be helpful depending on the return we might be looking for:
-1. The `DISTINCT` modifier instructs the sum function to calculate the total of distinct values, which means that duplicates are eliminated.
-2. The `ALL` modifier allows the sum function to return the sum of all values including duplicates. It is used by default if no modifier is specified explicitly.
+This will return the total sum of the shared wealth between our three celebrities, which would equal **$425,000,000**, and organize the list in alphabetical order.
 
 ### AVG
 
-The `AVG()` function returns an average of a group of numbers. We can use this function to return either the average net worth or the average age of the celebrities in our table. Let's look at the average $$$
+The `AVG()` function returns an average of a group of numbers. We can use this function to return either the average net worth or the average age of the celebrities in our table. Let's look at the average $$$:
 
 ```sql
 SELECT AVG(net_worth)
@@ -40,11 +37,11 @@ FROM celebrities
 ORDER BY name;
 ```
 
-Just like the sum function, the average function has the `DISTINCT` and `ALL` modifiers available to it.
+The average net worth between our three celebrities would be **$141,666,667**.
 
 ### COUNT
 
-The `COUNT()` function returns the number of rows present in a table. In this table we have three entries, Brad, Christoph, and Al.
+The `COUNT()` function returns the number of rows present in a table. In this table we have three entries, Brad, Christoph, and Al. The function below would just return **3** as the count value.
 
 ```sql
 SELECT COUNT(*)
@@ -58,6 +55,7 @@ SELECT COUNT(*)
 FROM celebrities
 WHERE net_worth > 1000000
 ```
+In this instance, only **2** of our celebrities are worth more than a hundred million, Brad Pitt and Al Pacino, so our count value would be 2.
 
 ### MAX and MIN
 
