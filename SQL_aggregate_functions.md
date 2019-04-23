@@ -79,3 +79,7 @@ SELECT MIN(age)
 FROM celebrities;
 ```
 This will return Brad Pitt, who is 55 years old.
+
+### To SUM It Up
+
+Aggregate functions are very helpful with databases that could have thousands or even hundreds of thousands of rows. With as little as three lines of code, we can find the sum or average of so many entries to make quick deductions. For more supplemental reading, [Microsoft's SQL Docs](https://docs.microsoft.com/en-us/sql/t-sql/functions/functions?view=sql-server-2017) dives deeper into more practical examples with aggregate functions and further explanations. 
