@@ -8,7 +8,14 @@ SQL is a domain-specific language and is the standard language for relational da
 3. COUNT
 4. MAX and MIN
 
-For illustration purposes, let's say we have a celebrities table that holds certain information, such as their name, notable movies, and net worth.
+An aggregate function performs a calculation on a set of values, and returns a single value. Except for *COUNT* aggregate functions which ignore null values. For illustration purposes, let's say we have a celebrities table that holds certain information, such as their name, notable movies, and net worth. To insert our values, we use the following code:
+```sql
+INSERT INTO celebrities (name, age, notable_movies, net_worth) VALUES
+('Brad Pitt', 55, 'Fight Club', 240000000),
+('Christoph Waltz', 62, 'Inglorious Bastards', 20000000),
+('Al Pacino', 78, 'Scarface', 165000000);
+```
+Our table with our new values would look like this:
 
 |       name      | age |    notable_movie    |   net_worth  |
 | --------------- | --- | ------------------- | ------------ |
