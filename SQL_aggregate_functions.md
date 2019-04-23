@@ -20,7 +20,7 @@ For illustration purposes, let's say we have a celebrities table that holds cert
 
 The `SUM()` function does exactly what it says, it returns the sum of numbers. Unlike other SQL aggregate functions, the sum function accepts only the expression that evaluates to numerical values. If we want to get the sum of the actor's net worth combined and order it by name, we can write something like:
 
-```
+```sql
 SELECT SUM(net_worth)
 FROM celebrities
 ORDER BY name;
@@ -34,7 +34,7 @@ There are two modifiers for the sum function that can be helpful depending on th
 
 The `AVG()` function returns an average of a group of numbers. We can use this function to return either the average net worth or the average age of the celebrities in our table. Let's look at the average $$$
 
-```
+```sql
 SELECT AVG(net_worth)
 FROM celebrities
 ORDER BY name;
@@ -46,14 +46,14 @@ Just like the sum function, the average function has the `DISTINCT` and `ALL` mo
 
 The `COUNT()` function returns the number of rows present in a table. In this table we have three entries, Brad, Christoph, and Al.
 
-```
+```sql
 SELECT COUNT(*)
 FROM celebrities;
 ```
 
 If we want to find the total count of celebrities with a net worth greater than a hundred million, we can set a conditional after the function:
 
-```
+```sql
 SELECT COUNT(*)
 FROM celebrities
 WHERE net_worth > 1000000
@@ -63,13 +63,13 @@ WHERE net_worth > 1000000
 
 The `MAX()` function returns the maximum value in a set while the `MIN()` function returns the minimum value in a set of values. This time, we want to see the oldest and youngest actors in our table.
 
-```
+```sql
 SELECT MAX(age)
 FROM celebrities;
 ```
 This will return Al Pacino which is the senior on the list, 78 years young - _Hooah!_
 
-```
+```sql
 SELECT MIN(age)
 FROM celebrities;
 ```
